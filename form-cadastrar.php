@@ -25,9 +25,5 @@
             <a href="index.php">Login</a>
         </div>
     </div>
-    <img src="img/vulcao.webp" class="vulcao">
-    <footer>
-        <img src="img/ondas.gif" width="1500px" height="140px">
-        </footer>
 </body>
 </html>

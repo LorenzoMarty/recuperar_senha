@@ -11,13 +11,13 @@
         <h1>Login</h1>
         <form action="login.php" method="post">
             <label for="nome">Nome: 
-                <input type="text" name="nome" id="nome">
+                <input type="text" name="nome">
             </label>
             <label for="email">Email: 
-                <input type="text" name="email" id="email">
+                <input type="text" name="email">
             </label>
             <label for="senha">Senha: 
-                <input type="password" name="senha" id="senha">
+                <input type="password" name="senha">
             </label>
             <input type="submit" value="Enviar">
         </form>
@@ -26,9 +26,5 @@
             <a href="form-recuperar-senha.php">Recuperar Senha</a>
         </div>
     </div>
-    <img src="img/vulcao.webp" class="vulcao">
-    <footer>
-        <img src="img/ondas.gif" width="1500px" height="140px">
-    </footer>
 </body>
 </html>

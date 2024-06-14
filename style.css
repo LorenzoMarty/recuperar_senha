@@ -1,6 +1,6 @@
 
         body {
-            background: linear-gradient(to top, #00008B, #ADD8E6);;
+            background: linear-gradient(to top, #15154b, #a7e9ff);;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,14 +36,14 @@
             padding: 0.7em;
             border: none;
             border-radius: 5px;
-            background-color: #5cb85c;
+            background-color: #1782ca;
             color: white;
             font-size: 1em;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         input[type="submit"]:hover {
-            background-color: #4cae4c;
+            background-color: #01f7ff;
         }
         .links {
             text-align: center;
@@ -57,18 +57,4 @@
         .links a:hover {
             text-decoration: none;
             color: black;
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .vulcao {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            height: 530px;
-            width: auto;
         }
