@@ -15,7 +15,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
-        h1 {
+        h1,h3 {
             text-align: center;
             color: #333;
         }
@@ -57,4 +57,7 @@
         .links a:hover {
             text-decoration: none;
             color: black;
+        }
+        .logado{
+            color: white;
         }
