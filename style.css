@@ -1,6 +1,6 @@
 
         body {
-            background: linear-gradient(to top, #15154b, #a7e9ff);;
+            background: linear-gradient(to top, #0a1128, #9381ff);;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,7 +43,7 @@
             transition: background-color 0.3s;
         }
         input[type="submit"]:hover {
-            background-color: #01f7ff;
+            background-color: #04395e;
         }
         .links {
             text-align: center;
