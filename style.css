@@ -1,6 +1,8 @@
 
         body {
-            background: linear-gradient(to top, #0a1128, #9381ff);;
+            background-image: url("img/fundo.svg");
+            background-repeat: no-repeat, repeat-x;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
