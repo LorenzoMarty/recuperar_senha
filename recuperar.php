@@ -50,6 +50,7 @@ try {
     Você solicitou o serviço de redefinição de senha. Por favor, clique no link para redefinir sua senha:
 <a href="'. $_SERVER['SERVER_NAME'] . '/nova-senha.php?email=' . $usuario['email'] .'&token=' . $token .'">Redefinir Senha</a>
     <br><br>Atenciosamente, Lorenzo!';
+    
     $mail->send();
     echo 'Email enviado com sucesso!<br>Confira o seu email.';
 } catch (Exception $e) {
