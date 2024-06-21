@@ -1,9 +1,10 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once "config.php";
+include "config.php";
 require_once "conecta.php";
 $conexao = conectar();
 
@@ -12,7 +13,7 @@ $sql = "SELECT * FROM usuario WHERE email='$email'";
 $resultado = executarSQL($conexao, $sql);
 
 $usuario = mysqli_fetch_assoc($resultado);
-if($usuario == null){
+if ($usuario == null) {
     echo "Email não cadastrado! Faca o cadastro e em seguida realize o login.";
     die();
 }
@@ -24,7 +25,7 @@ require_once 'PHPMailer-6.5.1/src/SMTP.php';
 require_once 'PHPMailer-6.5.1/src/Exception.php';
 
 $mail = new PHPMailer();
-try{
+try {
     //config
     $mail->CharSet = 'UTF-8';
     $mail->Encoding = 'base64';
@@ -38,7 +39,20 @@ try{
     $mail->Password = $config['senha_email'];
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
-} catch(Exception $e){
+
+    $mail->setFrom($config['email'], 'Lorenzo');
+    $mail->addAddress($usuario['email'], $usuario['nome']);
+    $mail->addReplyTo($config['email'], 'Lorenzo');
+
+    $mail->isHTML(true);
+    $mail->Subject = 'Recuperação de Senha do Sistema';
+    $mail->Body = 'Olá '.$usuario['nome'].', 
+    Você solicitou o serviço de redefinição de senha. Por favor, clique no link para redefinir sua senha:
+<a href="'. $_SERVER['SERVER_NAME'] . '/nova-senha.php?email=' . $usuario['email'] .'&token=' . $token .'">Redefinir Senha</a>
+    <br><br>Atenciosamente, Lorenzo!';
+    $mail->send();
+    echo 'Email enviado com sucesso!<br>Confira o seu email.';
+} catch (Exception $e) {
     echo "Não foi possível enviar o email.
     Mailer Erro: {$mail->ErrorInfo}";
 }
