@@ -3,6 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+require_once "config.php";
 require_once "conecta.php";
 $conexao = conectar();
 
@@ -33,8 +34,8 @@ try{
     $mail->isSMTP(); //envia o email usando SMTP
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'lorenzo.2022310934@aluno.iffar.edu.br';
-    $mail->Password = '31072005';
+    $mail->Username = $config['email'];
+    $mail->Password = $config['senha_email'];
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 } catch(Exception $e){
